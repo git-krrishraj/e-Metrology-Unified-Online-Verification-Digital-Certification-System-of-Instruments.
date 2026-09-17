@@ -1,4 +1,5 @@
 import React from 'react';
+import api from '../../api/client';
 import { formatDate, formatCurrency } from '../../utils/formatters';
 import { StatusBadge } from '../common/StatusBadge';
 import {
@@ -212,7 +213,7 @@ export const CertificateModal = ({ certificate, onClose }) => {
             <span>Print</span>
           </button>
           <a
-            href={`/api/certificates/${certificate._id}/pdf`}
+            href={`${api.defaults.baseURL}/certificates/${certificate._id}/pdf`}
             download
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-600 hover:bg-gov-500 shadow-sm transition"
           >
